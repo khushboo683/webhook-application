@@ -24,6 +24,19 @@ $ git clone https://github.com/khushboo683/webhook-application.git
 $ cd webhook-application
 $ npm install
 ```
+## Set up environment variable (.env file) for Mongodb Atlas url and JWT secret key as:
+
+```bash
+DATABASE_URL=xxxxx 
+JWT_SECRET_KEY=your generated key
+```
+### If not set up MongoDb Atlas url, MongoDb will run locally as docker container on mongodb://root:example@localhost:27017, but need to generate jwt secret key for authentication.
+### You may create a random key by using node.
+
+```bash
+Type node in your terminal, press the return key,
+Type crypto.randomBytes(20).toString(‘hex’)
+```
 
 ## Running the app
 
