@@ -96,6 +96,21 @@ $ npm init -y
 $ npm install axios
 $ node simulation.js
 ```
+## Architecture
+The application follows a client-server architecture with the following components:
+
+Frontend: Built with React.js and Material-UI, the frontend handles user interactions and displays data fetched from the backend.
+Backend: Built with Node.js and Express.js, the backend handles API requests, authentication, and database interactions.
+Database: MongoDB is used to store user data, webhook subscriptions, and incoming webhook events.
+Real-Time Communication: Socket.io is used to push real-time updates of incoming webhook events to the frontend.
+Event Streaming: Kafka is used for publishing incoming events from the source and then consuming them to store the events in the database and emit them to the frontend.
+
+## Design Choices
+Authentication and Authorization: JWT tokens are used for secure authentication and authorization. JWT is stateless and scales well with distributed systems.
+Database: MongoDB is chosen for its flexibility and scalability. It supports a large number of concurrent users and is suitable for storing JSON-like documents.
+Real-Time Log: Socket.io is used to implement real-time updates, ensuring that users can see incoming webhook events as they are processed.
+Event Streaming: Kafka is used to handle the high volume of incoming events, ensuring they are processed efficiently and stored reliably.
+Separation of Concerns: The application logic is separated into different routes and controllers, following the MVC pattern.
 
 ## Technologies Used
 
