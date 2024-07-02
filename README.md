@@ -37,7 +37,7 @@ $ npm start
 ```
 ## Webhook simulation
 - create a js file with name: /simulation.js. Copy the code in this file:
-- ```bash
+ ```bash
 const axios = require('axios');
 
 // Function to send a POST request to the webhook endpoint
