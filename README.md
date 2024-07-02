@@ -72,7 +72,7 @@ const sampleEventData1 = {
   };
 
 // URL of your webhook handling endpoint
-const webhookUrl = 'http://localhost:3000/api/webhooks/events'; // Change this to your actual endpoint
+const webhookUrl = 'http://localhost:3000/api/webhooks/events'; 
 
 // Send the webhook event
 sendWebhookEvent(webhookUrl, sampleEventData);
