@@ -1,5 +1,15 @@
 version: "3"
 services:
+  app:
+    image: webhook-app
+    secrets:
+      - database_url
+    environment:
+      DATABASE_URL: /run/secrets/database_url
+
+secrets:
+  database_url:
+    external: true
   zookeeper:
     image: 'wurstmeister/zookeeper:latest'
     ports:
