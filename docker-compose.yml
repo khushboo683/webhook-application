@@ -1,22 +1,11 @@
 version: "3"
 services:
-  app:
-    image: webhook-app
-    secrets:
-      - database_url
-    environment:
-      DATABASE_URL: /run/secrets/database_url
-
-secrets:
-  database_url:
-    external: true
   zookeeper:
     image: 'wurstmeister/zookeeper:latest'
     ports:
       - '2181:2181'
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
-
   kafka:
     image: 'wurstmeister/kafka:latest'
     ports:
@@ -29,3 +18,10 @@ secrets:
       - ALLOW_PLAINTEXT_LISTENER=yes
     depends_on:
       - zookeeper
+  mongodb:
+    image: 'mongo:latest'
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example    
