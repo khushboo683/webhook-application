@@ -120,5 +120,7 @@ Programming Language: JavaScript
 
 Database: MongoDB
 
+Event-Streaming: Kafka
+
 Containerization: Docker
 
